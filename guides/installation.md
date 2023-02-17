@@ -18,7 +18,7 @@ npm install react react-dom
  **dnd kit** is a [monorepo](https://en.wikipedia.org/wiki/Monorepo). Depending on your needs, you may also want to install other  sub-packages that are available under the `@dnd-kit` namespace.
 {% endhint %}
 
-In order to keep the core of the library small, **dnd kit** only ships with the core building blocks that the majority of users will need most of the time for building drag and drop experiences:
+为了保持库的核心较小，***dnd kit**仅附带核心构建块，大多数用户将在大部分时间内使用这些构建块来构建拖放体验：
 
 * [Context provider](../api-documentation/context-provider/)
 * Hooks for: 
@@ -34,9 +34,9 @@ If you don't need any other features, you can skip right ahead to the [Quick sta
 
 ### [Sortable](../presets/sortable/)
 
-The `@dnd-kit/core` package provides all the building blocks you would need to build a sortable interface from scratch should you choose to, but thankfully you don't need to. 
+`@dnd-kit/core`包提供了从头开始构建可排序接口所需的所有构建块，但幸运的是，您不需要这样做。
 
-If you plan on building a sortable interface, we highly recommend you try out `@dnd-kit/sortable`, which is a small layer built on top of `@dnd-kit/core` and optimized for building silky smooth, flexible, and accessible sortable interfaces.
+如果您计划构建可排序界面，我们强烈推荐您尝试`@dnd-kit/sortable`，这是一个构建在`@dnd-kit/sortable`之上的，针对构建丝滑、灵活、可访问的可排序界面进行了优化。
 
 ```
 npm install @dnd-kit/sortable

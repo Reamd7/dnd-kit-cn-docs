@@ -2,7 +2,7 @@
 
 ## Introduction
 
-If you're new to accessibility for the web, the _Web Almanac by HTTP Archive_ has an excellent primer on the subject and the state of web accessibility that you should read before diving into this guide: [https://almanac.httparchive.org/en/2021/accessibility](https://almanac.httparchive.org/en/2021/accessibility)
+如果你是网页辅助功能的新手，《网页年鉴》中有一本很好的入门读物，关于网页辅助功能的主题和状态，你应该在开始阅读本指南之前阅读：[https://almanac.httparchive.org/en/2021/accessibility](https://almanac.httparchive.org/en/2021/accessibility)
 
 > Web accessibility is about achieving feature and information parity and giving complete access to all aspects of an interface to disabled people.&#x20;
 >

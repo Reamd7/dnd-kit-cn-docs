@@ -1,18 +1,18 @@
 ---
 description: >-
-  Eager to get started? This quick start guide will help you familiarize
-  yourself with the core concepts of dnd kit.
+  急于开始吗？本快速入门指南将帮助您熟悉
+  让您了解dnd-kit的核心概念。
 ---
 
 # Quick start
 
 {% hint style="info" %}
-Before getting started, make sure you have followed the installation steps outlined in the [Installation guide](installation.md).
+在开始之前，请确保您已按照[安装指南](installation.md)中概述的安装步骤进行操作。
 {% endhint %}
 
 ### Context provider
 
-First, we'll set up the general structure of the app. In order for the [`useDraggable`]() and [`useDroppable`]() hooks to function correctly, you'll need to ensure that the components where they are used are wrapped within a [`<DndContext />`](../api-documentation/context-provider/) component:
+首先，我们将设置应用程序的一般结构。为了让[`useDraggable`]()和[`useDroppable`]()钩子正常工作，您需要确保使用它们的组件包装在[`<DndContext/>`](../api-Documentation/Context-Provider/)组件中：
 
 {% tabs %}
 {% tab title="App.jsx" %}
@@ -36,11 +36,11 @@ function App() {
 
 ![](../.gitbook/assets/droppable-large.svg)
 
-Next, let's set up your first **Droppable** component.  To do so, we'll be using the `useDroppable` hook.  
+接下来，让我们设置您的第一个**Droppable**组件。为此，我们将使用`useDroppable`挂钩。
   
-The `useDroppable` hook isn't opinionated about how your app should be structured. At minimum, they requires you pass a ref to the DOM element that you would like to become droppable. You'll also need to provide a unique `id` attribute to all your droppable components. 
+`useDroppable`挂钩对你的应用程序应该如何构建并不关心。至少，它们要求您传递一个对DOM元素的引用，您希望该元素成为 droppable 。您还需要为所有 droppable 的组件提供唯一的`id`属性。
 
-When a **Draggable** item is over your droppable element, the `isOver` property will become true.
+当**Draggable**项位于Droppable元素上方时，`isOver`属性将变为 true
 
 {% tabs %}
 {% tab title="Droppable.jsx" %}
@@ -67,17 +67,17 @@ function Droppable(props) {
 {% endtab %}
 {% endtabs %}
 
-As you can see, it really only takes just a few lines to transform your existing components into droppable containers.
+正如您所看到的，只需几行代码就可以将现有组件转换为可拖放的容器。
 
 ### Draggable
 
 ![](../.gitbook/assets/draggable-large.svg)
 
-Finally, let's take a look at implementing our first **Draggable** component. To do so, we'll be using the `useDraggable` hook.
+最后，让我们来看看如何实现我们的第一个**可拖动**组件。为此，我们将使用`useDraggable`挂钩。
 
-The `useDraggable` ****hook isn't opinionated about how your app should be structured. At minimum, it requires you to be able to attach listeners and a ref to the DOM element that you would like to become draggable. You'll also need to provide a unique `id` attribute to all your draggable components. 
+`useDraggable`挂钩对于应用程序应该如何构建并不关心。至少，它要求您能够将侦听器listeners和引用附加到您希望成为可拖动的DOM元素。您还需要为所有可拖动组件提供唯一的`id`属性。
 
-After an item starts being dragged, the `transform` property will be populated with the `translate` coordinates you'll need to move the item on the screen.  The `transform` object adheres to the following shape: `{x: number, y: number, scaleX: number, scaleY: number}`
+当一个项目开始被拖动后，您需要在屏幕上移动该项目所需的`Translate`坐标将填充到`Transform`属性中。对象符合以下形状：`{x：number，y：number，scaleX：number，scaleY：number}`
 
 {% tabs %}
 {% tab title="Draggable.jsx" %}
@@ -104,17 +104,20 @@ function Draggable(props) {
 {% endtab %}
 {% endtabs %}
 
-As you can see from the example above, it really only takes just a few lines to transform your existing components into draggable components.
+正如您从上面的示例中看到的，只需几行代码就可以将现有组件转换为可拖动的组件。
 
 {% hint style="success" %}
-**Tips:** 
+**提示：**
 
-* For performance reasons, we recommend you use **`transform`** over other positional CSS properties to move the dragged element. 
-* You'll likely want to alter the **`z-index`** of your Draggable component to ensure it appears on top of other elements.
-* If your item needs to move from one container to another, we recommend you use the [`<DraggableClone>`](../api-documentation/draggable/clone.md) component so the item isn't constrained to its parent's stacking context and overflow constraints.
+*出于性能考虑，我们建议您优先使用**`Transform`**，而不是其他位置的CSS属性来移动被拖动的元素。
+
+*您可能希望更改可拖动组件的**`z-index`**，以确保它出现在其他元素的顶部。
+
+*如果您的项目需要从一个容器移动到另一个容器，我们建议您使用[`<DraggableClone>`](../api-documentation/draggable/clone.md)组件，这样项目就不会受到其父项目的堆叠上下文和溢出约束的限制。
+
 {% endhint %}
 
-Converting the `transform` object to a string can feel tedious. Fear not, you can avoid having to do this by hand by importing the `CSS` utility from the `@dnd-kit/utilities` package: 
+将`transform`对象转换为字符串可能会让人感觉很乏味。不用担心，您可以通过从`@dnd-kit/utilities`包中导入`CSS`工具函数来避免手动操作：
 
 ```jsx
 import {CSS} from '@dnd-kit/utilities';
@@ -125,15 +128,15 @@ const style = {
 }
 ```
 
-### Assembling all the pieces
+### 把所有的碎片组装起来
 
-Once you've set up your **Droppable** and **Draggable** components, you'll want to come back to where you set up your [`<DndContext>`](../api-documentation/context-provider/) component so you can add event listeners to be able to respond to the different events that are fired.
+一旦您设置了 **Droppable** 和 **Draggable** 组件，您会希望返回到设置[`<DndContext>`](../api-documentation/context-provider/)组件的位置，这样您就可以添加事件侦听器，以便能够响应触发的不同事件。
 
-In this example, we'll assume you want to move your `<Draggable>` component from outside into your `<Droppable>` component:
+在本例中，我们假设您希望将`<Draggable>`组件从外部移到`<Droppable>`组件中：
 
-![](../.gitbook/assets/example.png)
+![](../.gitbook/sets/example.png)
 
-To do so, you'll want to listen to the `onDragEnd` event of  the `<DndContext>` to see if your draggable item was dropped over your droppable:
+为此，您需要监听`<DndContext>`的`onDragEnd`事件，以查看您的draggable项是否落在了您的droppable项上：
 
 {% tabs %}
 {% tab title="App.jsx" %}
@@ -214,13 +217,13 @@ export function Draggable(props) {
 {% endtab %}
 {% endtabs %}
 
-That's it! You've set up your first [**Droppable**](../api-documentation/droppable/) ****and [**Draggable**](../api-documentation/draggable/) components.
+就这样!您已经设置了第一个[**Droppable**](../api-documentation/droppable/)*和[**Draggable**](../api-documentation/draggable/)组件。
 
-### Pushing things a bit further
+### 再往前推一点
 
-The example we've set up above is a bit simplistic. In the real world, you may have multiple droppable containers, and you may also want to be able to drag your items back out of the droppable containers once they've been dragged within them. 
+我们上面设置的例子有点简单化。在现实世界中，您可能有多个可放入的容器，并且您可能还希望能够在项目被拖入可放入的容器中后将其拖出。
 
-Here's a slightly more complex example that contains multiple **Droppable** containers:
+下面是一个稍微复杂一点的示例，它包含多个**Droppable**容器：
 
 ```jsx
 import React from 'react';
@@ -260,5 +263,5 @@ function App() {
 };
 ```
 
-We hope this quick start guide has given you a glimpse of the simplicity and power of **dnd kit**. There's much more to learn, and we encourage you to keep reading about all of the different options you can pass to the `<DndContext>` in the next section.
+我们希望本快速入门指南能让您对**dnd ki**的简单性和强大功能有一个初步了解。还有更多的东西需要学习，我们鼓励您继续阅读下一节中可以传递给`<DndContext>`的所有不同选项。
 
